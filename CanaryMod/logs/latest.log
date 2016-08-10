@@ -1,0 +1,38 @@
+[21:39:41] [CanaryMod] [INFO]: Starting: CanaryMod 1.8.0-1.2.0
+[21:39:41] [CanaryMod] [INFO]: Canary Path: /D:/CanaryMod/CanaryMod.jar & Working From: D:\CanaryMod
+[21:39:41] [CanaryMod] [INFO]: Registered xml Database
+[21:39:41] [CanaryMod] [INFO]: Found 7 plugins; total: 7
+[21:39:43] [net.minecraft.server.dedicated.DedicatedServer] [INFO]: Starting minecraft server version 1.8
+[21:39:43] [net.minecraft.server.dedicated.DedicatedServer] [INFO]: Loading properties
+[21:39:43] [net.minecraft.server.dedicated.DedicatedServer] [INFO]: Generating keypair
+[21:39:43] [net.minecraft.server.dedicated.DedicatedServer] [INFO]: Starting Minecraft server on *:25565
+[21:39:43] [CanaryMod] [INFO]: Enabling early Plugins...
+[21:39:44] [CanaryMod] [INFO]: Enabling late Plugins...
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin Building-Plugin
+[21:39:44] [Building-Plugin] [INFO]: loading of BuildPlugin finished
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin "Hello Server!"-Plugin
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin "Hello World!"-Plugin
+[21:39:44] ["Hello World!"-Plugin] [INFO]: Hello World!
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin "PlusOne"-Plugin
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin "Pumkin"-Plugin
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin "Pumpkin Tower"-Plugin
+[21:39:44] [CanaryMod] [INFO]: Enabling plugin "Pumpkin Wall"-Plugin
+[21:39:44] ["Pumpkin Wall"-Plugin] [INFO]: PumpkinWallPlugin- loading finished
+[21:39:44] [net.minecraft.server.MinecraftServer] [INFO]: Preparing start region for level default_NORMAL (0)
+[21:39:45] [net.minecraft.server.MinecraftServer] [INFO]: Preparing spawn area: 25%
+[21:39:46] [net.minecraft.server.MinecraftServer] [INFO]: Preparing spawn area: 68%
+[21:39:47] [net.minecraft.server.dedicated.DedicatedServer] [INFO]: Done (3,550s)! For help, type "help" or "?"
+[21:43:11] [CanaryMod] [INFO] [NOTICE]: Console issued a manual shutdown
+[21:43:11] [net.minecraft.server.MinecraftServer] [INFO]: Stopping server
+[21:43:11] [net.minecraft.server.MinecraftServer] [INFO]: Saving players
+[21:43:11] [net.minecraft.server.MinecraftServer] [INFO]: Saving worlds
+[21:43:11] [net.minecraft.server.MinecraftServer] [INFO]: Saving chunks for level 'default'/Overworld
+[21:43:11] [CanaryMod] [INFO]: Disabling Plugins ...
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin Building-Plugin
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin "Hello Server!"-Plugin
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin "Hello World!"-Plugin
+[21:43:11] ["Hello World!"-Plugin] [INFO]: Bye World!
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin "PlusOne"-Plugin
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin "Pumkin"-Plugin
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin "Pumpkin Tower"-Plugin
+[21:43:11] [CanaryMod] [INFO]: Disabling plugin "Pumpkin Wall"-Plugin

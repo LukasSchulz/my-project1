@@ -1,0 +1,4 @@
+main-class = HelloWorldPlugin
+name = "Hello World!"-Plugin
+author = Lukas Schulz
+version = 1.0

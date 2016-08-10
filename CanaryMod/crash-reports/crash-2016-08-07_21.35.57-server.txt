@@ -1,0 +1,375 @@
+---- Minecraft Crash Report ----
+// Why is it breaking :(
+
+Time: 07.08.16 21:35
+Description: Watching Server
+
+java.lang.Error
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3936)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4806)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4812)
+	at net.minecraft.block.state.pattern.BlockPattern.a(BlockPattern.java:51)
+	at net.minecraft.block.state.pattern.BlockPattern.a(BlockPattern.java:80)
+	at net.minecraft.block.BlockPumpkin.e(BlockPumpkin.java:76)
+	at net.minecraft.block.BlockPumpkin.c(BlockPumpkin.java:42)
+	at net.minecraft.world.chunk.Chunk.a(Chunk.java:580)
+	at net.minecraft.world.World.a(World.java:284)
+	at net.minecraft.world.World.a(World.java:336)
+	at net.canarymod.api.world.CanaryWorld.setBlock(CanaryWorld.java:254)
+	at net.canarymod.api.world.blocks.CanaryBlock.update(CanaryBlock.java:177)
+	at net.canarymod.api.world.CanaryWorld.setBlockAt(CanaryWorld.java:291)
+	at net.canarymod.api.world.CanaryWorld.setBlockAt(CanaryWorld.java:281)
+	at Cube.build(Cube.java:30)
+	at BuildPlugin.build(BuildPlugin.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.canarymod.commandsys.CommandManager$1.execute(CommandManager.java:322)
+	at net.canarymod.commandsys.CanaryCommand.parseCommand(CanaryCommand.java:103)
+	at net.canarymod.commandsys.CommandManager.parseCommand(CommandManager.java:186)
+	at net.canarymod.api.entity.living.humanoid.CanaryPlayer.executeCommand(CanaryPlayer.java:372)
+	at net.canarymod.api.entity.living.humanoid.CanaryPlayer.chat(CanaryPlayer.java:186)
+	at net.minecraft.network.NetHandlerPlayServer.a(NetHandlerPlayServer.java:841)
+	at net.minecraft.network.play.client.C01PacketChatMessage.a(C01PacketChatMessage.java:34)
+	at net.minecraft.network.play.client.C01PacketChatMessage.a(C01PacketChatMessage.java:42)
+	at net.minecraft.network.PacketThreadUtil$1.run(PacketThreadUtil.java:17)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at net.minecraft.server.MinecraftServer.z(MinecraftServer.java:638)
+	at net.minecraft.server.dedicated.DedicatedServer.z(DedicatedServer.java:446)
+	at net.minecraft.server.MinecraftServer.y(MinecraftServer.java:587)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:489)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3936)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4806)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4812)
+	at net.minecraft.block.state.pattern.BlockPattern.a(BlockPattern.java:51)
+	at net.minecraft.block.state.pattern.BlockPattern.a(BlockPattern.java:80)
+	at net.minecraft.block.BlockPumpkin.e(BlockPumpkin.java:76)
+	at net.minecraft.block.BlockPumpkin.c(BlockPumpkin.java:42)
+	at net.minecraft.world.chunk.Chunk.a(Chunk.java:580)
+	at net.minecraft.world.World.a(World.java:284)
+	at net.minecraft.world.World.a(World.java:336)
+	at net.canarymod.api.world.CanaryWorld.setBlock(CanaryWorld.java:254)
+	at net.canarymod.api.world.blocks.CanaryBlock.update(CanaryBlock.java:177)
+	at net.canarymod.api.world.CanaryWorld.setBlockAt(CanaryWorld.java:291)
+	at net.canarymod.api.world.CanaryWorld.setBlockAt(CanaryWorld.java:281)
+	at Cube.build(Cube.java:30)
+	at BuildPlugin.build(BuildPlugin.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.canarymod.commandsys.CommandManager$1.execute(CommandManager.java:322)
+	at net.canarymod.commandsys.CanaryCommand.parseCommand(CanaryCommand.java:103)
+	at net.canarymod.commandsys.CommandManager.parseCommand(CommandManager.java:186)
+	at net.canarymod.api.entity.living.humanoid.CanaryPlayer.executeCommand(CanaryPlayer.java:372)
+	at net.canarymod.api.entity.living.humanoid.CanaryPlayer.chat(CanaryPlayer.java:186)
+	at net.minecraft.network.NetHandlerPlayServer.a(NetHandlerPlayServer.java:841)
+	at net.minecraft.network.play.client.C01PacketChatMessage.a(C01PacketChatMessage.java:34)
+	at net.minecraft.network.play.client.C01PacketChatMessage.a(C01PacketChatMessage.java:42)
+	at net.minecraft.network.PacketThreadUtil$1.run(PacketThreadUtil.java:17)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at net.minecraft.server.MinecraftServer.z(MinecraftServer.java:638)
+	at net.minecraft.server.dedicated.DedicatedServer.z(DedicatedServer.java:446)
+	at net.minecraft.server.MinecraftServer.y(MinecraftServer.java:587)
+
+-- Thread Dump --
+Details:
+	Threads: "Netty Server IO #2" Id=29 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@685d4bfb
+	-  locked java.util.Collections$UnmodifiableSet@669aa880
+	-  locked sun.nio.ch.WindowsSelectorImpl@62a5208b
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:596)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:306)
+	...
+
+
+"File IO Thread" Id=50 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.c(ThreadedFileIOBase.java:54)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(ThreadedFileIOBase.java:31)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Netty Server IO #1" Id=28 BLOCKED on java.util.ArrayDeque@27a7a2bb owned by "Server thread" Id=22
+	at net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1373)
+	-  blocked on java.util.ArrayDeque@27a7a2bb
+	at net.minecraft.server.MinecraftServer.a(MinecraftServer.java:1390)
+	at net.minecraft.world.WorldServer.a(WorldServer.java:990)
+	at net.minecraft.network.PacketThreadUtil.a(PacketThreadUtil.java:14)
+	at net.minecraft.network.NetHandlerPlayServer.a(NetHandlerPlayServer.java:230)
+	at net.minecraft.network.play.client.C03PacketPlayer.a(C03PacketPlayer.java:23)
+	at net.minecraft.network.play.client.C03PacketPlayer.a(C03PacketPlayer.java:71)
+	at net.minecraft.network.NetworkManager.channelRead0(NetworkManager.java:99)
+	...
+
+
+"Server Watchdog" Id=46 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(Unknown Source)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:41)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"pool-3-thread-8" Id=45 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-7" Id=44 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-6" Id=43 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-5" Id=42 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-4" Id=41 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-3" Id=40 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-2" Id=39 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"pool-3-thread-1" Id=38 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@25a73727
+	at java.util.concurrent.locks.LockSupport.parkNanos(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.poll(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	...
+
+
+"MCStats / Plugin Metrics" Id=37 RUNNABLE (in native)
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.fill(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	-  locked java.io.BufferedInputStream@16ca45bb
+	at sun.net.www.http.HttpClient.parseHTTPHeader(Unknown Source)
+	...
+
+
+"Netty Server IO #0" Id=27 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@47885df4
+	-  locked java.util.Collections$UnmodifiableSet@5b8a542d
+	-  locked sun.nio.ch.WindowsSelectorImpl@1fa9357a
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:596)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:306)
+	...
+
+
+"Thread-6" Id=26 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@46246418
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@46246418
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+	at java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+	at com.mojang.util.QueueLogAppender.getNextLogEvent(QueueLogAppender.java:77)
+	at net.canarymod.util.SysOutWriterThread.run(SysOutWriterThread.java:72)
+
+
+"Server console handler" Id=25 RUNNABLE (in native)
+	at org.fusesource.jansi.internal.Kernel32._getch(Native Method)
+	at org.fusesource.jansi.internal.WindowsSupport.readByte(WindowsSupport.java:46)
+	at jline.WindowsTerminal.readByte(WindowsTerminal.java:185)
+	at jline.WindowsTerminal.access$000(WindowsTerminal.java:53)
+	at jline.WindowsTerminal$1.read(WindowsTerminal.java:151)
+	at jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:169)
+	-  locked jline.internal.NonBlockingInputStream@43c6e6d5
+	at jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:137)
+	at jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:246)
+	...
+
+
+"DestroyJavaVM" Id=24 RUNNABLE
+
+
+"Server thread" Id=22 RUNNABLE
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3936)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4806)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4812)
+	at net.minecraft.block.state.pattern.BlockPattern.a(BlockPattern.java:51)
+	at net.minecraft.block.state.pattern.BlockPattern.a(BlockPattern.java:80)
+	at net.minecraft.block.BlockPumpkin.e(BlockPumpkin.java:76)
+	at net.minecraft.block.BlockPumpkin.c(BlockPumpkin.java:42)
+	...
+
+
+"Server Infinisleeper" Id=21 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:98)
+
+
+"NonBlockingInputStreamThread" Id=20 WAITING on jline.internal.NonBlockingInputStream@43c6e6d5 owned by "Server console handler" Id=25
+	at java.lang.Object.wait(Native Method)
+	-  waiting on jline.internal.NonBlockingInputStream@43c6e6d5
+	at jline.internal.NonBlockingInputStream.run(NonBlockingInputStream.java:278)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Snooper Timer" Id=18 TIMED_WAITING on java.util.TaskQueue@4a64f9bc
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@4a64f9bc
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+
+"AWT-Windows" Id=12 RUNNABLE (in native)
+	at sun.awt.windows.WToolkit.eventLoop(Native Method)
+	at sun.awt.windows.WToolkit.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Java2D Disposer" Id=10 WAITING on java.lang.ref.ReferenceQueue$Lock@1c30076f
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@1c30076f
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at sun.java2d.Disposer.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Attach Listener" Id=5 RUNNABLE
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@79d1b455
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@79d1b455
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@d5505f4
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@d5505f4
+	at java.lang.Object.wait(Unknown Source)
+	at java.lang.ref.Reference.tryHandlePending(Unknown Source)
+	at java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+
+
+
+Stacktrace:
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:61)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.8
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_92, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 479627704 bytes (457 MB) / 878706688 bytes (838 MB) up to 1883242496 bytes (1796 MB)
+	JVM Flags: 0 total; 
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [EntityPlayerMP['Finn20121'/381, l='default', x=-151,95, y=79,00, z=236,47]]
+	Is Modded: Definitely; Server brand changed to 'CanaryMod'
+	Type: Dedicated Server (map_server.txt)

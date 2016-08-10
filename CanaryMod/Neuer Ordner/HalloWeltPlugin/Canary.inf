@@ -1,0 +1,4 @@
+main-class = HalloWeltPlugin
+name = "Hallo welt!"-Plugin
+author = Daniel Braun
+version = 1.0

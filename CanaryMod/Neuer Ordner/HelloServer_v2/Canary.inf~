@@ -1,0 +1,4 @@
+main-class = HelloServerPlugin_v2
+name = "Hello Server!"-Plugin
+author = Lukas Schulz
+version = 2.0
